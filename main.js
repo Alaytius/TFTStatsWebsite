@@ -15,7 +15,7 @@ const stats = await fetch(process.env.APIURL, requestOptions)
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    // console.log(response.json())
+    console.log(response.json());
     return response.json();
   })
   .catch(error => {
@@ -30,8 +30,8 @@ let table = new DataTable('#stats', {
 app.get('/', (req, res) => {
   fs.readFile('index.html', 'utf8', (err, data) => {
     if (err) throw err;
-    res.send(data)
-    console.log(stats)
+    res.send(data);
+    console.log(stats);
   });
 });
 
