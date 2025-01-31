@@ -4,10 +4,9 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "module",
   "main": "api/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./api/index.js"
   },
   "dependencies": {
     "datatables.net-dt": "^2.2.1",

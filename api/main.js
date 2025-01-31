@@ -1,5 +1,7 @@
-import DataTable from 'datatables.net-dt';
-import express from 'express';
+// import DataTable from 'datatables.net-dt';
+// import express from 'express';
+const express = require('express');
+const DataTable = require('datatables.net')
 import fs from 'node:fs';
 const app = express();
 
@@ -35,7 +37,7 @@ app.get('/', (req, res) => {
 </head>
 <body>
     <h1 style="text-align:center">TFT Augment Stats</h1>
-    <table id="stats" style="width:70%; text-align:center;">
+    <table id="stats" style="width:70%;border: 1rem;margin-left: auto;margin-right: auto;" class="display">
         <thead>
             <tr>
                 <th>Augment Name</th>
