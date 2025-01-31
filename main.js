@@ -3,19 +3,14 @@ import express from 'express';
 import fs from 'node:fs';
 const app = express();
 
-const {
-  APIKEY,
-  APIURL
-} = process.env;
-
 const requestOptions = {
   method: 'GET',
   headers: {
-    'X-API-KEY': `${APIKEY}`,
+    'X-API-KEY': `${process.env.APIKEY}`,
   },
 };
 
-const stats = await fetch(APIURL, requestOptions)
+const stats = await fetch(process.env.APIURL, requestOptions)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -36,6 +31,7 @@ app.get('/', (req, res) => {
   fs.readFile('index.html', 'utf8', (err, data) => {
     if (err) throw err;
     res.send(data)
+    console.log(stats)
   });
 });
 
