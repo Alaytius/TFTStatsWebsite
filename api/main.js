@@ -1,7 +1,8 @@
 // import DataTable from 'datatables.net-dt';
 // import express from 'express';
 const express = require('express');
-const DataTable = require('datatables.net');
+var $ = require( 'jquery' );
+var DataTable = require( 'datatables.net' )(window, $);
 // import fs from 'node:fs';
 const app = express();
 
