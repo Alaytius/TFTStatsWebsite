@@ -30,25 +30,26 @@ const app = express();
 // });
 
 app.get('/', (req, res) => {
-  html = `<head>
+  html = `
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TFT Augment Stats</title>
-</head>
-<body>
-    <h1 style="text-align:center">TFT Augment Stats</h1>
-    <table id="stats" style="width:70%;border: 1rem;margin-left: auto;margin-right: auto;" class="display">
-        <thead>
-            <tr>
-                <th>Augment Name</th>
-                <th>Average Placement</th>
-                <th>2-1</th>
-                <th>3-2</th>
-                <th>4-2</th>
-                <th>Games Played</th>
-            </tr>
-    </table>
-</body>`;
+  </head>
+  <body>
+      <h1 style="text-align:center">TFT Augment Stats</h1>
+      <table id="stats" style="width:70%;border: 1rem;margin-left: auto;margin-right: auto;" class="display">
+          <thead>
+              <tr>
+                  <th>Augment Name</th>
+                  <th>Average Placement</th>
+                  <th>2-1</th>
+                  <th>3-2</th>
+                  <th>4-2</th>
+                  <th>Games Played</th>
+              </tr>
+      </table>
+  </body>`;
   // fs.readFile('index.html', 'utf8', (err, data) => {
   //   if (err) throw err;
   //   res.send(data);
