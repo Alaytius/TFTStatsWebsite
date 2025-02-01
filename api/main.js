@@ -41,18 +41,17 @@ async function getData() {
 
 
 app.get('/', async (req, res) => {
-  const stats = await fetch(process.env.APIURL, requestOptions)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    console.log(response.json());
-    return response.json();
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-  console.log('help');
+  // const stats = await fetch(process.env.APIURL, requestOptions)
+  // .then(response => {
+  //   if (!response.ok) {
+  //     throw new Error('Network response was not ok');
+  //   }
+  //   console.log(response.json());
+  //   return response.json();
+  // })
+  // .catch(error => {
+  //   console.error('Error:', error);
+  // });
   html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -78,7 +77,7 @@ app.get('/', async (req, res) => {
   </html>`;
   res.send(html);
   let table = new DataTable('#stats', {
-    data: stats,
+    ajax: 'https://jsonplaceholder.typicode.com/posts',
     paging: false
   });
 });
