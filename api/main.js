@@ -42,10 +42,6 @@ async function getData() {
 
 app.get('/', async (req, res) => {
   const stats = await getData();
-  let table = new DataTable('#stats', {
-    data: stats,
-    paging: false
-  });
   html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -54,8 +50,6 @@ app.get('/', async (req, res) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>TFT Augment Stats</title>
       <script src="main.js"></script>
-      <script
-      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
   </head>
   <body>
       <h1 style="text-align:center">TFT Augment Stats</h1>
@@ -73,6 +67,10 @@ app.get('/', async (req, res) => {
   </body>
   </html>`;
   res.send(html);
+  let table = new DataTable('#stats', {
+    data: stats,
+    paging: false
+  });
 });
 module.exports = app;
 
