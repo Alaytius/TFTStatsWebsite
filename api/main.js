@@ -41,7 +41,18 @@ async function getData() {
 
 
 app.get('/', async (req, res) => {
-  const stats = await getData();
+  const stats = await fetch(process.env.APIURL, requestOptions)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    console.log(response.json());
+    return response.json();
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+  console.log('help');
   html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -49,7 +60,6 @@ app.get('/', async (req, res) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>TFT Augment Stats</title>
-      <script src="main.js"></script>
   </head>
   <body>
       <h1 style="text-align:center">TFT Augment Stats</h1>
