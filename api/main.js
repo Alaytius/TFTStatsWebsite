@@ -1,7 +1,7 @@
 // import DataTable from 'datatables.net-dt';
 // import express from 'express';
 const express = require('express');
-// const DataTable = require('datatables.net');
+const DataTable = require('datatables.net');
 // import fs from 'node:fs';
 const app = express();
 
@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
       </table>
   </body>
   </html>`;
-  res.send(data);
+  res.send(html);
 });
 module.exports = app;
 
