@@ -6,7 +6,7 @@
   "author": "",
   "main": "main.js",
   "scripts": {
-    "start": "node ./api/index.js"
+    "start": "node ./api/main.js"
   },
   "dependencies": {
     "datatables.net-dt": "^2.2.1",
