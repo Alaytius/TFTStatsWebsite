@@ -2,7 +2,7 @@
 // import express from 'express';
 const express = require('express');
 var $ = require( 'jquery' );
-var DataTable = require( 'datatables.net' )(window, $);
+var DataTable = require( 'datatables.net' )($);
 // import fs from 'node:fs';
 const app = express();
 
@@ -39,10 +39,7 @@ async function getData() {
 //     console.error('Error:', error);
 //   });
 
-// let table = new DataTable('#stats', {
-//     data: stats,
-//     paging: false
-// });
+
 
 app.get('/', async (req, res) => {
   const stats = await getData();
