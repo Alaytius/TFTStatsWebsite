@@ -1,8 +1,7 @@
 // import DataTable from 'datatables.net-dt';
 // import express from 'express';
 const express = require('express');
-var $ = require( 'jquery' );
-var DataTable = require( 'datatables.net' )($);
+var DataTable = require( 'datatables.net' );
 // import fs from 'node:fs';
 const app = express();
 
@@ -55,6 +54,8 @@ app.get('/', async (req, res) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>TFT Augment Stats</title>
       <script src="main.js"></script>
+      <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
   </head>
   <body>
       <h1 style="text-align:center">TFT Augment Stats</h1>
