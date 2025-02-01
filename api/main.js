@@ -12,7 +12,8 @@ const requestOptions = {
   },
 };
 
-const stats = await fetch(process.env.APIURL, requestOptions)
+async function getData() {
+  fetch(process.env.APIURL, requestOptions)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -23,13 +24,31 @@ const stats = await fetch(process.env.APIURL, requestOptions)
   .catch(error => {
     console.error('Error:', error);
   });
+}
+
+// const stats = await fetch(process.env.APIURL, requestOptions)
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok');
+//     }
+//     console.log(response.json());
+//     return response.json();
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
 
 // let table = new DataTable('#stats', {
 //     data: stats,
 //     paging: false
 // });
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  const stats = await getData();
+  let table = new DataTable('#stats', {
+    data: stats,
+    paging: false
+  });
   html = `
   <!DOCTYPE html>
   <html lang="en">
