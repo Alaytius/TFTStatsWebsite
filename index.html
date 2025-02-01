@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/2.2.1/js/dataTables.js"></script>
-    <script src="api/main.js"></script>
+    <script>$(document).ready( function () {
+        $('#stats').DataTable({
+          paging: false,
+          ajax: 'https://jsonplaceholder.typicode.com/posts'
+        });
+      } );
+    </script>
 </head>
 <body>
     <h1 style="text-align:center">TFT Augment Stats</h1>
