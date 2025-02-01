@@ -52,5 +52,5 @@ app.get('/', (req, res) => {
   </body>`;
   res.send(data);
 });
-
+module.exports = app;
 
