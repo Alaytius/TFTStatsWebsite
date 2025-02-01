@@ -31,10 +31,13 @@ const app = express();
 
 app.get('/', (req, res) => {
   html = `
+  <!DOCTYPE html>
+  <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TFT Augment Stats</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>TFT Augment Stats</title>
+      <script src="main.js"></script>
   </head>
   <body>
       <h1 style="text-align:center">TFT Augment Stats</h1>
@@ -49,7 +52,8 @@ app.get('/', (req, res) => {
                   <th>Games Played</th>
               </tr>
       </table>
-  </body>`;
+  </body>
+  </html>`;
   res.send(data);
 });
 module.exports = app;
