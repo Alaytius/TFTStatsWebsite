@@ -6,7 +6,7 @@ import { DataTable } from "./data-table";
 const requestOptions = {
   method: 'GET',
   headers: {
-    'X-API-KEY': `${process.env.APIKEY || ''}`,
+    'X-API-KEY': `${process.env.APIKEY}`,
   },
 };
 
