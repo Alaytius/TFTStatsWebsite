@@ -11,7 +11,7 @@ const requestOptions = {
 };
 
 async function getData(): Promise<Augments[]> {
-  const data = await fetch(process.env.APIURL || '', requestOptions);
+  const data = await fetch(`http://${process.env.APIURL}/${process.env.ENDPOINT}`, requestOptions);
   const stats = await data.json();
   return stats
 };
