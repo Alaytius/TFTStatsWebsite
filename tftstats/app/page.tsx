@@ -1,6 +1,6 @@
 import { Augments, columns } from "./columns";
 import { DataTable } from "./data-table";
-import { promises as fs } from 'fs';
+
 const requestOptions = {
   method: 'GET',
   headers: {

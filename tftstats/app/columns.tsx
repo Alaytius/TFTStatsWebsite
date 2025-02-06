@@ -7,12 +7,18 @@ import { Button } from "@/components/ui/button"
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 export type Augments = {
-  name: any
-  avg: any
-  avg2_1: any
-  avg3_2: any
-  avg4_2: any
-  games: any
+  name: string
+  avg: number
+  avg2_1: number
+  avg3_2: number
+  avg4_2: number
+  games: number
+  // name: any
+  // avg: any
+  // avg2_1: any
+  // avg3_2: any
+  // avg4_2: any
+  // games: any
 }
 
 export const columns: ColumnDef<Augments>[] = [
