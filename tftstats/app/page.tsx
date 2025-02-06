@@ -1,19 +1,18 @@
 import { Augments, columns } from "./columns";
 import { DataTable } from "./data-table";
 
+
+
 const requestOptions = {
   method: 'GET',
   headers: {
-    'X-API-KEY': `${process.env.APIKEY}`,
+    'X-API-KEY': `${process.env.APIKEY || ''}`,
   },
 };
 
 async function getData(): Promise<Augments[]> {
-  const data = await fetch(process.env.APIURL, requestOptions);
+  const data = await fetch(process.env.APIURL || '', requestOptions);
   const stats = await data.json();
-  // const file = await fs.readFile(process.cwd() + '/app/test.json', 'utf8');
-  // const stats = await JSON.parse(file);
-  // console.log(stats)
   return stats
 };
 
