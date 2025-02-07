@@ -17,7 +17,7 @@ import { DataTable } from "./data-table";
 export const revalidate = 120
 
 export default async function Home() { 
-  const res = await fetch(`http://jsonplaceholder.typicode.com/posts`)
+  const res = await fetch(`${process.env.APIURL}`)
   const data: Augments[] = await res.json()
   console.log(data)
   return (
