@@ -1,7 +1,6 @@
 import { Augments, columns } from "./columns";
 import { DataTable } from "./data-table";
-import fetch from "isomorphic-fetch";
-
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 
 
 // const requestOptions = {
@@ -16,11 +15,14 @@ import fetch from "isomorphic-fetch";
 //   const stats = await data.json();
 //   return stats
 // };
-
-export default async function Home() {
-  const res = await fetch(`http://${process.env.APIURL}/${process.env.ENDPOINT}`, {method: "GET"});
+export const getServerSideProps = (async () => {
+  const res = await fetch(`http://${process.env.APIURL}/${process.env.ENDPOINT}`);
   const data: Augments[] = await res.json();
+  return { props: { data }}
+}) satisfies GetServerSideProps<{data: Augments[]}>
 
+
+export default function Home({data,}:InferGetServerSidePropsType<typeof getServerSideProps>) { 
   return (
     <div className="container mx-auto py-10">
       <h1 className="title">TFT Augment Stats</h1>
