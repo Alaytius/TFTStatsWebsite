@@ -14,10 +14,9 @@ import { DataTable } from "./data-table";
 //   const stats = await data.json();
 //   return stats
 // };
-export const revalidate = 120
 
 export default async function Home() { 
-  const res = await fetch(`${process.env.APIURL}`)
+  const res = await fetch(`${process.env.APIURL}`, {next: {revalidate : 900}})
   const data: Augments[] = await res.json()
   console.log(data)
   return (
