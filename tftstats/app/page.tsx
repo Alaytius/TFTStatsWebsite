@@ -14,7 +14,7 @@ import { DataTable } from "./data-table";
 //   const stats = await data.json();
 //   return stats
 // };
-export const revalidate = 3600
+export const revalidate = 120
 
 export default async function Home() { 
   const res = await fetch(`https://api.vercel.app/blog`)
