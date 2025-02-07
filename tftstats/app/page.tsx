@@ -17,8 +17,9 @@ import { DataTable } from "./data-table";
 export const revalidate = 3600
 
 export default async function Home() { 
-  const res = await fetch(`http://${process.env.APIURL}/${process.env.ENDPOINT}`)
+  const res = await fetch(`https://api.vercel.app/blog`)
   const data: Augments[] = await res.json()
+  console.log(data)
   return (
     <div className="container mx-auto py-10">
       <h1 className="title">TFT Augment Stats</h1>
