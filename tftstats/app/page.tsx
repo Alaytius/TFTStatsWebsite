@@ -18,7 +18,7 @@ import { DataTable } from "./data-table";
 
 export default async function Home() {
   const res = await fetch('http://' + process.env.APIURL + '/' + process.env.ENDPOINT);
-  const data = await res.json();
+  const data: Augments[] = await res.json();
 
   return (
     <div className="container mx-auto py-10">
