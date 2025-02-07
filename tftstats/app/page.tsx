@@ -1,5 +1,6 @@
 import { Augments, columns } from "./columns";
 import { DataTable } from "./data-table";
+import fetch from "isomorphic-fetch";
 
 
 
@@ -17,7 +18,7 @@ import { DataTable } from "./data-table";
 // };
 
 export default async function Home() {
-  const res = await fetch('http://' + process.env.APIURL + '/' + process.env.ENDPOINT);
+  const res = await fetch(`http://${process.env.APIURL}/${process.env.ENDPOINT}`, {method: "GET"});
   const data: Augments[] = await res.json();
 
   return (
