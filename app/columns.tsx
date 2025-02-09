@@ -13,12 +13,6 @@ export type Augments = {
   avg3_2: number
   avg4_2: number
   games: number
-  // name: any
-  // avg: any
-  // avg2_1: any
-  // avg3_2: any
-  // avg4_2: any
-  // games: any
 }
 
 export const columns: ColumnDef<Augments>[] = [
