@@ -21,7 +21,7 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="default"
+          variant="link"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Augment Name
@@ -35,7 +35,7 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="destructive"
+          variant="link"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Average Placement
@@ -49,7 +49,7 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="outline"
+          variant="link"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           At 2-1
@@ -63,7 +63,7 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="secondary"
+          variant="link"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           At 3-2
@@ -77,7 +77,7 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="ghost"
+          variant="link"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           At 4-2

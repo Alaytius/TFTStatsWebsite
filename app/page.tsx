@@ -2,7 +2,7 @@ import { Augments, columns } from "./columns";
 import { DataTable } from "./data-table";
 
 export default async function Home() { 
-  const res = await fetch(`${process.env.APIURL}`, {next: {revalidate : 900}})
+  const res = await fetch(`${process.env.APIURL}`, {next: {revalidate : 1800}})
   const data: Augments[] = await res.json()
   console.log(data)
   return (
