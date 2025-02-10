@@ -31,7 +31,7 @@ export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
-  const [sorting, setSorting] = React.useState<SortingState>([{id: 'avg', desc: false}])
+  const [sorting, setSorting] = React.useState<SortingState>([{id: 'games', desc: true}])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
@@ -96,7 +96,7 @@ export function DataTable<TData, TValue>({
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center" aria-description="!!">
+              <TableCell colSpan={columns.length} className="h-24 text-center" aria-label="!!">
                 No results.
               </TableCell>
             </TableRow>
