@@ -1,20 +1,6 @@
 import { Augments, columns } from "./columns";
 import { DataTable } from "./data-table";
 
-
-// const requestOptions = {
-//   method: 'GET',
-//   headers: {
-//     'X-API-KEY': `${process.env.APIKEY}`,
-//   },
-// };
-
-// async function getData(): Promise<Augments[]> {
-//   const data = await fetch(`http://${process.env.APIURL}/${process.env.ENDPOINT}`);
-//   const stats = await data.json();
-//   return stats
-// };
-
 export default async function Home() { 
   const res = await fetch(`${process.env.APIURL}`, {next: {revalidate : 900}})
   const data: Augments[] = await res.json()

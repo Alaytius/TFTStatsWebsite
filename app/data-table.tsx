@@ -31,7 +31,7 @@ export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
-  const [sorting, setSorting] = React.useState<SortingState>([{id: 'name', desc: false}])
+  const [sorting, setSorting] = React.useState<SortingState>([{id: 'avg', desc: false}])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
@@ -53,7 +53,7 @@ export function DataTable<TData, TValue>({
   <div>
     <div className="flex items-center py-4">
     <Input
-      placeholder="Filter augments..."
+      placeholder="Search augments..."
       value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
       onChange={(event) =>
         table.getColumn("name")?.setFilterValue(event.target.value)
@@ -96,7 +96,7 @@ export function DataTable<TData, TValue>({
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
+              <TableCell colSpan={columns.length} className="h-24 text-center" aria-description="!!">
                 No results.
               </TableCell>
             </TableRow>

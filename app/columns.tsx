@@ -14,14 +14,14 @@ export type Augments = {
   avg4_2: number
   games: number
 }
-
+//Top 4 Rate, Win Rate
 export const columns: ColumnDef<Augments>[] = [
   {
     accessorKey: "name",
     header: ({ column }) => {
       return (
         <Button
-          variant="ghost"
+          variant="default"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Augment Name
@@ -35,7 +35,7 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="ghost"
+          variant="default"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Average Placement
@@ -49,10 +49,10 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="ghost"
+          variant="default"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          2-1
+          At 2-1
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
@@ -63,10 +63,10 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="ghost"
+          variant="default"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          3-2
+          At 3-2
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
@@ -77,10 +77,10 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="ghost"
+          variant="default"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          4-2
+          At 4-2
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
@@ -91,7 +91,7 @@ export const columns: ColumnDef<Augments>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="ghost"
+          variant="default"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Games Played
