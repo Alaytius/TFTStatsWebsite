@@ -96,12 +96,12 @@ export function DataTable<TData, TValue>({
                   <TooltipProvider key={cell.id}>
                     <Tooltip>
                       <TooltipTrigger>
-                        <TableCell>
+                        <TableCell colSpan={columns.length} className="h-24 text-center">
                           {flexRender(cell.column.columnDef.cell, cell.getContext())}
                         </TableCell>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>{cell.id}</p>
+                        <p>Filler</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
