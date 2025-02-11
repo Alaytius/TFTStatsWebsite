@@ -93,16 +93,18 @@ export function DataTable<TData, TValue>({
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <Tooltip key={cell.id}>
-                    <TooltipTrigger>
-                      <TableCell>
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                      </TableCell>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{cell.id}</p>
-                    </TooltipContent>
-                  </Tooltip>
+                  <TooltipProvider key={cell.id}>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <TableCell>
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </TableCell>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{cell.id}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 ))}
               </TableRow>
             ))
