@@ -96,7 +96,7 @@ export function DataTable<TData, TValue>({
                   <TooltipProvider key={cell.id}>
                     <Tooltip>
                       <TooltipTrigger>
-                        <TableCell colSpan={columns.length} className="h-24 text-center">
+                        <TableCell>
                           {flexRender(cell.column.columnDef.cell, cell.getContext())}
                         </TableCell>
                       </TooltipTrigger>
@@ -109,11 +109,20 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))
           ) : (
+            <TooltipProvider>
+            <Tooltip>
+            <TooltipTrigger>
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
                 No results.
               </TableCell>
             </TableRow>
+              </TooltipTrigger>
+                <TooltipContent>
+                  <p></p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )}
         </TableBody>
       </Table>
