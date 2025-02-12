@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/button"
 export type Augments = {
   name: string
   avg: number
-  avg2_1: number
-  avg3_2: number
-  avg4_2: number
+  avg2_1: [number, number]
+  avg3_2: [number, number]
+  avg4_2: [number, number]
   games: number
 }
 //Top 4 Rate, Win Rate
