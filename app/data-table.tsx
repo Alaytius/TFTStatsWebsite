@@ -93,14 +93,16 @@ export function DataTable<TData, TValue>({
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} className={Array.isArray(cell.getValue() as [number, number]|string) ? ((cell.getValue() as [number, number])[1] < 25 ?  "text-gray-500" : '') : 'herl'}>
                   <TooltipProvider>
                   <Tooltip>
                   <TooltipTrigger>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    {/* {flexRender(cell.column.columnDef.cell, cell.getContext())} */}
+                    {/* {(cell.getValue() as string) ? flexRender(cell.column.columnDef.cell, cell.getContext()) : (cell.getValue() as [number, number])[0]} */}
+                    {Array.isArray(cell.getValue() as [number, number]|string) ? (cell.getValue() as [number, number])[0] : flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TooltipTrigger>
                   <TooltipContent>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    {Array.isArray(cell.getValue() as [number, number]|string) ? (cell.getValue() as [number, number])[1] + ' Games': flexRender(cell.column.columnDef.cell, cell.getContext())} 
                   </TooltipContent>
                   </Tooltip>
                   </TooltipProvider>
@@ -109,20 +111,11 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))
           ) : (
-            <TooltipProvider>
-            <Tooltip>
-            <TooltipTrigger>
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
                 No results.
               </TableCell>
             </TableRow>
-              </TooltipTrigger>
-                <TooltipContent>
-                  <p></p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
           )}
         </TableBody>
       </Table>

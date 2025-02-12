@@ -45,6 +45,20 @@ export const columns: ColumnDef<Augments>[] = [
     },
   },
   {
+    accessorKey: "games",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="link"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Games Played
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+  },
+  {
     accessorKey: "avg2_1",
     header: ({ column }) => {
       return (
@@ -81,20 +95,6 @@ export const columns: ColumnDef<Augments>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           At 4-2
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
-  },
-  {
-    accessorKey: "games",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="link"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Games Played
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
