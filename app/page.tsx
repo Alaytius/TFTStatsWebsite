@@ -7,7 +7,7 @@ export default async function Home() {
   const file = await fs.readFile('data.json', 'utf8')
   const data1: Augments[] = await res.json()
   const data = JSON.parse(file);
-  // console.log(data)
+  console.log(data1)
   return (
     <div className="container mx-auto py-10">
       <h1 className="title">TFT Augment Stats</h1>
