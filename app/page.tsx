@@ -3,9 +3,9 @@ import { DataTable } from "./data-table";
 import { promises as fs } from 'fs';
 
 export default async function Home() { 
-  // const res = await fetch(`${process.env.APIURL}`, {next: {revalidate : 1800}})
+  const res = await fetch(`${process.env.APIURL}`, {next: {revalidate : 1800}})
   const file = await fs.readFile('data.json', 'utf8')
-  // const data: Augments[] = await res.json()
+  const data1: Augments[] = await res.json()
   const data = JSON.parse(file);
   // console.log(data)
   return (
