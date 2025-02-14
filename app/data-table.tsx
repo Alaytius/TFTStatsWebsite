@@ -93,7 +93,7 @@ export function DataTable<TData, TValue>({
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className={Array.isArray(cell.getValue() as [number, number]|string) ? ((cell.getValue() as [number, number])[1] < 25 ?  "text-gray-500" : '') : 'herl'}>
+                  <TableCell key={cell.id} className={Array.isArray(cell.getValue() as [number, number]|string) ? ((cell.getValue() as [number, number])[1] < 40 ?  "text-gray-500" : '') : ''}>
                   <TooltipProvider>
                   <Tooltip>
                   <TooltipTrigger>
