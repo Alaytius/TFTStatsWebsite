@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <div className="container mx-auto py-10">
       <h1 className="title">TFT Augment Stats by @Setsuko VODS</h1>
-      <h1>Patch 13.5</h1>
+      <h1>Patch 13.6</h1>
       <h1>Data from master+ games, updates every 30 minutes</h1>
       <DataTable columns={columns} data={data} />
       <Analytics />
