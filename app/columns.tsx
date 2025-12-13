@@ -13,6 +13,8 @@ export type Augments = {
   avg3_2: [number, number]
   avg4_2: [number, number]
   games: number
+  top4: number
+  top1: number
 }
 //Top 4 Rate, Win Rate
 export const columns: ColumnDef<Augments>[] = [
@@ -95,6 +97,34 @@ export const columns: ColumnDef<Augments>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           At 4-2
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+  },
+  {
+    accessorKey: "top4",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="link"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Top 4
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+  },
+  {
+    accessorKey: "top1",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="link"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Win Rate
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
