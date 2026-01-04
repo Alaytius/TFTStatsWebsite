@@ -12,7 +12,7 @@ export default async function Home() {
     <div className="container mx-auto py-10">
       <h1 className="title">TFT Augment Stats by @Setsuko VODS</h1>
       <h1>Patch 16.1c</h1>
-      <h1>Data from master+ games, updates every 30 minutes</h1>
+      <h1>Data from Master+ games in NA, EUW, and VN. Updates every 30 minutes</h1>
       <DataTable columns={columns} data={data} />
       <Analytics />
       <p><small>I am not affliated with Riot Games</small></p>
