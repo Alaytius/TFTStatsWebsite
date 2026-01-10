@@ -4,6 +4,8 @@ import { Analytics } from '@vercel/analytics/next';
 
 export default async function Home() { 
   const res = await fetch(`${process.env.APIURL}`, {next: {revalidate : 1800}})
+  const patchdata = await fetch(`${process.env.PATCHURL}`, {next: {revalidate : 1800}})
+  const patch: string = (await patchdata.json()).patch;
   // const file = await fs.readFile('data.json', 'utf8')
   const data: Augments[] = await res.json()
   // const data = JSON.parse(file);
@@ -11,7 +13,7 @@ export default async function Home() {
   return (
     <div className="container mx-auto py-10">
       <h1 className="title">TFT Augment Stats by @Setsuko VODS</h1>
-      <h1>Patch 16.1c</h1>
+      <h1>Patch {patch}</h1>
       <h1>Data from Master+ games in NA, EUW, and VN. Updates every 30 minutes</h1>
       <DataTable columns={columns} data={data} />
       <Analytics />
