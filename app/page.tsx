@@ -9,7 +9,7 @@ export default async function Home() {
   // const file = await fs.readFile('data.json', 'utf8')
   const data: Augments[] = await res.json()
   // const data = JSON.parse(file);
-  // console.log(data1)
+  console.log(patch)
   return (
     <div className="container mx-auto py-10">
       <h1 className="title">TFT Augment Stats by @Setsuko VODS</h1>
